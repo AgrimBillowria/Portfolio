@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-display: 'Inter', 'Helvetica Neue', sans-serif;
+
+  --color-bg-primary: #F4F4F4;
+  --color-accent-primary: #D32F2F;
+  --color-text-primary: #1A1A1A;
+  --color-text-subtle: #757575;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased m-0 min-h-screen;
+    /* Structural 1px grid layout foundation */
+    border-top: 1px solid var(--color-text-primary);
+  }
+}
