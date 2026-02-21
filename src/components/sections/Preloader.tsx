@@ -62,8 +62,8 @@ export const Preloader = () => {
         if (firstDone && lastDone) {
             const t = setTimeout(() => {
                 setIsComplete(true);
-                // Extend unmount time to allow the full cinematic exit anim to play
-                setTimeout(() => setShouldUnmount(true), 1500);
+                // Extend unmount time highly to allow the full cinematic exit anim/blur to fade
+                setTimeout(() => setShouldUnmount(true), 1900);
             }, 400);
             return () => clearTimeout(t);
         }
@@ -71,34 +71,63 @@ export const Preloader = () => {
 
     if (shouldUnmount) return null;
 
+    // Array of 8 bands to create the "Venetian Shutter" effect
+    // We calculate delay from center (indices 3,4 open first, then 2,5, then 1,6, etc.)
+    const TOTAL_BANDS = 8;
+    const getBandDelay = (index: number) => {
+        const centerOffset = Math.abs(index - (TOTAL_BANDS - 1) / 2); // 0.5, 1.5, 2.5, 3.5
+        // Outer bands delay longer than inner bands
+        return centerOffset * 0.08;
+    };
+
     return (
         <div
             className="fixed inset-0 z-[9999] flex flex-col items-center justify-center overflow-hidden pointer-events-none"
         >
-            {/* Top Half Background - Slides Right */}
-            <div
-                className={`absolute top-0 left-0 w-full h-1/2 bg-text-primary transition-transform duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isComplete ? "translate-x-full" : "translate-x-0"
-                    }`}
-            />
+            {/* The 8 Shutter Bands */}
+            <div className="absolute inset-0 flex flex-col w-full h-full">
+                {Array.from({ length: TOTAL_BANDS }).map((_, i) => (
+                    <div
+                        key={i}
+                        className="w-full bg-text-primary flex-1 transition-transform ease-[cubic-bezier(0.85,0,0.15,1)]"
+                        style={{
+                            transitionDuration: "1200ms",
+                            transitionDelay: isComplete ? `${getBandDelay(i)}s` : "0s",
+                            // Even indices slide Left, Odd indices slide Right
+                            transform: isComplete
+                                ? i % 2 === 0
+                                    ? "translate3d(-100vw, 0, 0)"
+                                    : "translate3d(100vw, 0, 0)"
+                                : "translate3d(0, 0, 0)",
+                            willChange: "transform",
+                        }}
+                    />
+                ))}
+            </div>
 
-            {/* Bottom Half Background - Slides Left */}
+            {/* Title Container - Hyper-Zoom & Motion Tear */}
             <div
-                className={`absolute bottom-0 left-0 w-full h-1/2 bg-text-primary transition-transform duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isComplete ? "-translate-x-full" : "translate-x-0"
+                className={`relative z-10 w-full max-w-[100vw] flex flex-col items-center justify-center px-4 md:px-8 text-center gap-1 md:gap-3 transition-all duration-[1400ms] ease-[cubic-bezier(0.85,0,0.15,1)] ${isComplete
+                    ? "scale-[6] md:scale-[10] opacity-0 tracking-[1em]"
+                    : "scale-100 opacity-100 tracking-normal"
                     }`}
-            />
-
-            {/* Text Container - Scales Up & Fades Out */}
-            <div
-                className={`relative z-10 w-full max-w-[100vw] flex flex-col items-center justify-center px-4 md:px-8 text-center gap-1 md:gap-3 transition-all duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isComplete ? "scale-[5] md:scale-[3] opacity-0" : "scale-100 opacity-100"
-                    }`}
+                // Using inline styles for complex filter transition that breaks in tailwind arbitrarily
+                style={{
+                    filter: isComplete ? "blur(12px)" : "blur(0px)",
+                    willChange: "transform, filter, opacity",
+                }}
             >
                 {/* First Name */}
-                <h1 className="text-bg-primary text-[13vw] sm:text-[15vw] md:text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap">
+                <h1 className="text-bg-primary text-[13vw] sm:text-[15vw] md:text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap transition-all duration-[1400ms] ease-[cubic-bezier(0.85,0,0.15,1)]"
+                    style={{ letterSpacing: isComplete ? "0.3em" : "normal" }}
+                >
                     {firstName}
                 </h1>
 
                 {/* Last Name */}
-                <h1 className="text-bg-primary text-[13vw] sm:text-[15vw] md:text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap">
+                <h1 className="text-bg-primary text-[13vw] sm:text-[15vw] md:text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap transition-all duration-[1400ms] ease-[cubic-bezier(0.85,0,0.15,1)]"
+                    style={{ letterSpacing: isComplete ? "0.3em" : "normal" }}
+                >
                     {lastName}
                 </h1>
             </div>
