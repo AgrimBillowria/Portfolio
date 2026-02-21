@@ -62,7 +62,8 @@ export const Preloader = () => {
         if (firstDone && lastDone) {
             const t = setTimeout(() => {
                 setIsComplete(true);
-                setTimeout(() => setShouldUnmount(true), 1200);
+                // Extend unmount time to allow the full cinematic exit anim to play
+                setTimeout(() => setShouldUnmount(true), 1500);
             }, 400);
             return () => clearTimeout(t);
         }
@@ -72,16 +73,31 @@ export const Preloader = () => {
 
     return (
         <div
-            className={`fixed inset-0 z-[9999] bg-text-primary flex flex-col items-center justify-center transition-transform duration-1000 ease-[cubic-bezier(0.85,0,0.15,1)] ${isComplete ? "-translate-y-full" : "translate-y-0"
-                }`}
+            className="fixed inset-0 z-[9999] flex flex-col items-center justify-center overflow-hidden pointer-events-none"
         >
-            <div className="w-full max-w-[100vw] flex flex-col items-center justify-center px-4 md:px-8 overflow-hidden text-center gap-1 md:gap-3">
+            {/* Top Half Background - Slides Right */}
+            <div
+                className={`absolute top-0 left-0 w-full h-1/2 bg-text-primary transition-transform duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isComplete ? "translate-x-full" : "translate-x-0"
+                    }`}
+            />
+
+            {/* Bottom Half Background - Slides Left */}
+            <div
+                className={`absolute bottom-0 left-0 w-full h-1/2 bg-text-primary transition-transform duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isComplete ? "-translate-x-full" : "translate-x-0"
+                    }`}
+            />
+
+            {/* Text Container - Scales Up & Fades Out */}
+            <div
+                className={`relative z-10 w-full max-w-[100vw] flex flex-col items-center justify-center px-4 md:px-8 text-center gap-1 md:gap-3 transition-all duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isComplete ? "scale-[5] md:scale-[3] opacity-0" : "scale-100 opacity-100"
+                    }`}
+            >
                 {/* First Name */}
                 <h1 className="text-bg-primary text-[13vw] sm:text-[15vw] md:text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap">
                     {firstName}
                 </h1>
 
-                {/* Last Name — identical settings to first */}
+                {/* Last Name */}
                 <h1 className="text-bg-primary text-[13vw] sm:text-[15vw] md:text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap">
                     {lastName}
                 </h1>
