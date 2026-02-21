@@ -16,17 +16,17 @@ export const Works = () => {
             imageLabel: "AI Automation Workflow"
         },
         {
-            isImageBlock: true,
-            imageSrc: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&fit=crop",
-            imageLabel: "AI Agent Network"
-        },
-        {
             name: "AI Workflow",
             year: "2024",
             type: "BUSINESS AUTOMATION",
             description: "Built business automations using n8n, integrating APIs, LLMs, and databases seamlessly.",
             link: "https://github.com/agrimbillowria/ai-workflow-automation",
             isImageBlock: false
+        },
+        {
+            isImageBlock: true,
+            imageSrc: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&fit=crop",
+            imageLabel: "AI Agent Network"
         },
         {
             name: "Resume Classifier",
@@ -71,16 +71,16 @@ export const Works = () => {
                     >
                         {project.isImageBlock ? (
                             /* Image blocks: fixed height on mobile */
-                            <div className="group w-full bg-[#E8E8E8] flex items-center justify-center cursor-pointer overflow-hidden relative h-[260px] sm:h-[340px] md:h-[500px]">
+                            <div className="group w-full bg-[#E8E8E8] flex items-center justify-center cursor-pointer overflow-hidden relative h-[260px] sm:h-[340px] md:h-[500px] border-b border-text-primary">
                                 <img
                                     src={project.imageSrc}
                                     alt={project.imageLabel}
-                                    className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                                    className="w-full h-full object-cover filter grayscale-[40%] md:grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
-                                <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                                    <span className="text-white text-xs font-bold tracking-widest uppercase">
-                                        {project.imageLabel}
+                                <div className="absolute inset-0 bg-black/10 md:bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
+                                <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-4 md:p-6 translate-y-0 md:translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-gradient-to-t from-black/60 to-transparent md:from-transparent">
+                                    <span className="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase">
+                                        // VISUAL: {project.imageLabel}
                                     </span>
                                     <span className="text-white text-lg font-thin">↗</span>
                                 </div>
