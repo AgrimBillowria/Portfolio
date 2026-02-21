@@ -62,8 +62,8 @@ export const Preloader = () => {
         if (firstDone && lastDone) {
             const t = setTimeout(() => {
                 setIsComplete(true);
-                // Extend unmount time highly to allow the full cinematic exit anim/blur to fade
-                setTimeout(() => setShouldUnmount(true), 1900);
+                // Extend unmount time to allow the full cinematic exit anim to play
+                setTimeout(() => setShouldUnmount(true), 1500);
             }, 400);
             return () => clearTimeout(t);
         }
@@ -75,25 +75,22 @@ export const Preloader = () => {
         <div
             className="fixed inset-0 z-[9999] flex flex-col items-center justify-center overflow-hidden pointer-events-none"
         >
-            {/* Top Half Background - Slides UP */}
+            {/* Top Half Background - Slides Right */}
             <div
-                className={`absolute top-0 left-0 w-full h-1/2 bg-text-primary transition-transform duration-[1000ms] ease-[cubic-bezier(0.87,0,0.13,1)] ${isComplete ? "-translate-y-full" : "translate-y-0"
+                className={`absolute top-0 left-0 w-full h-1/2 bg-text-primary transition-transform duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isComplete ? "translate-x-full" : "translate-x-0"
                     }`}
-                style={{ willChange: "transform" }}
             />
 
-            {/* Bottom Half Background - Slides DOWN */}
+            {/* Bottom Half Background - Slides Left */}
             <div
-                className={`absolute bottom-0 left-0 w-full h-1/2 bg-text-primary transition-transform duration-[1000ms] ease-[cubic-bezier(0.87,0,0.13,1)] ${isComplete ? "translate-y-full" : "translate-y-0"
+                className={`absolute bottom-0 left-0 w-full h-1/2 bg-text-primary transition-transform duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isComplete ? "-translate-x-full" : "translate-x-0"
                     }`}
-                style={{ willChange: "transform" }}
             />
 
-            {/* Text Container - Elegant Scale & Fade */}
+            {/* Text Container - Scales Up & Fades Out */}
             <div
-                className={`relative z-10 w-full max-w-[100vw] flex flex-col items-center justify-center px-4 md:px-8 text-center gap-1 md:gap-3 transition-all duration-[800ms] ease-out ${isComplete ? "scale-110 opacity-0 blur-sm" : "scale-100 opacity-100 blur-0"
+                className={`relative z-10 w-full max-w-[100vw] flex flex-col items-center justify-center px-4 md:px-8 text-center gap-1 md:gap-3 transition-all duration-[1200ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${isComplete ? "scale-[5] md:scale-[3] opacity-0" : "scale-100 opacity-100"
                     }`}
-                style={{ willChange: "transform, opacity, filter" }}
             >
                 {/* First Name */}
                 <h1 className="text-bg-primary text-[13vw] sm:text-[15vw] md:text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap">
