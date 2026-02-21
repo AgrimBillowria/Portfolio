@@ -39,6 +39,17 @@ export const CustomCursor = () => {
         };
 
         document.addEventListener("mousemove", onMouseMove);
+
+        // Hide cursor when leaving the window
+        document.addEventListener("mouseleave", () => {
+            if (dot) dot.style.opacity = "0";
+            if (ring) ring.style.opacity = "0";
+        });
+        document.addEventListener("mouseenter", () => {
+            if (dot) dot.style.opacity = "1";
+            if (ring) ring.style.opacity = "1";
+        });
+
         animate();
 
         // Hover state for interactive elements
@@ -70,8 +81,8 @@ export const CustomCursor = () => {
             <div
                 ref={cursorRingRef}
                 id="cursor-ring"
-                className="fixed top-0 left-0 w-8 h-8 border border-text-primary rounded-full pointer-events-none z-[99998] -translate-x-1/2 -translate-y-1/2 transition-[width,height,border-color] duration-200"
-                style={{ willChange: "transform" }}
+                className="fixed top-0 left-0 w-8 h-8 border border-text-primary rounded-full pointer-events-none z-[99998] -translate-x-1/2 -translate-y-1/2 transition-all duration-200"
+                style={{ willChange: "transform, opacity", opacity: 0 }}
             />
             <style>{`
                 @media (min-width: 768px) {
@@ -82,6 +93,7 @@ export const CustomCursor = () => {
                     width: 56px;
                     height: 56px;
                     border-color: #D32F2F;
+                    background-color: rgba(211, 47, 47, 0.05);
                 }
             `}</style>
         </div>
