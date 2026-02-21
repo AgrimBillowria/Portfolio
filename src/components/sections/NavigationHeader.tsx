@@ -89,7 +89,7 @@ export const NavigationHeader = () => {
                                     <a
                                         href={link.href}
                                         onClick={() => setMenuOpen(false)}
-                                        className={`block text-[14vw] sm:text-[10vw] font-black uppercase leading-none tracking-[-0.04em] transition-colors py-2 border-b border-bg-primary/20 ${activeSection === link.id ? "text-accent-primary" : "hover:text-accent-primary"
+                                        className={`block text-[10vw] sm:text-[10vw] font-black uppercase leading-none tracking-[-0.04em] transition-colors py-2 border-b border-bg-primary/20 ${activeSection === link.id ? "text-accent-primary" : "hover:text-accent-primary"
                                             }`}
                                     >
                                         {String(i + 1).padStart(2, "0")} &nbsp; {link.label}
