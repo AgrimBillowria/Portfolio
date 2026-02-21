@@ -8,12 +8,140 @@
   --color-accent-primary: #D32F2F;
   --color-text-primary: #1A1A1A;
   --color-text-subtle: #757575;
+
+  /* ── Type Scale ─────────────────────────────── */
+  /* Use these via: text-display-hero, text-display-section etc. */
+  --text-display-hero: clamp(3rem, 12.5vw, 10rem);
+  /* massive hero / preloader names */
+  --text-display-section: clamp(2rem, 10vw, 8rem);
+  /* section labels (Services, Works) */
+  --text-display-card: clamp(1.5rem, 5vw, 4.5rem);
+  /* card headings */
+  --text-body-lg: clamp(1.125rem, 2vw, 1.5rem);
+  /* large body copy */
+  --text-label: 0.75rem;
+  /* ALL-CAPS tracking labels */
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 69px;
+    /* Accounts for the strict 69px desktop header height */
+  }
+
   body {
     @apply bg-bg-primary text-text-primary font-sans antialiased m-0 min-h-screen;
     /* Structural 1px grid layout foundation */
     border-top: 1px solid var(--color-text-primary);
   }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-flicker {
+  animation: text-flicker 1.5s infinite;
+}
+
+/* ── Scroll Reveal ─────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Horizontal wipe variant — for section headers / marquees */
+.reveal-x {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-x.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale-in variant — for stat blocks */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.08s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.18s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.30s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.44s;
 }
