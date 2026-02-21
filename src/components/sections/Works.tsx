@@ -98,7 +98,7 @@ export const Works = () => {
                                         <span className="text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] opacity-70">// {project.type}</span>
                                         <span className="text-xs md:text-base">[ {project.year} ]</span>
                                     </div>
-                                    <h3 className="text-[10vw] sm:text-[8vw] md:text-[5vw] lg:text-[4vw] xl:text-[3.5vw] font-bold uppercase tracking-[-0.05em] leading-[0.85] mt-4 md:mt-8 break-words hyphens-auto">
+                                    <h3 className="text-[9vw] sm:text-[8vw] md:text-[5vw] lg:text-[4vw] xl:text-[3.5vw] font-bold uppercase tracking-[-0.05em] leading-[0.85] mt-4 md:mt-8 break-words">
                                         {project.name}
                                     </h3>
                                 </div>

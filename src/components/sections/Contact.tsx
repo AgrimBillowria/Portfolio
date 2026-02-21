@@ -33,7 +33,7 @@ export const Contact = () => {
         <section id="contact" className="w-full flex-col border-b border-text-primary">
             {/* Contact Header */}
             <div className="w-full p-4 md:p-8 border-b border-text-primary bg-text-primary text-bg-primary">
-                <h2 className="text-[13vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw] font-black uppercase tracking-[-0.04em] leading-[0.85] mb-3 md:mb-4 font-display">
+                <h2 className="text-[11vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] font-black uppercase tracking-[-0.04em] leading-[0.95] mb-3 md:mb-4 font-display">
                     Have an idea?
                     <br />
                     <span className="text-accent-primary italic">Let's talk!</span>
@@ -68,7 +68,7 @@ export const Contact = () => {
                             <h3 className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-text-subtle mb-4 md:mb-6 opacity-60">
                                 // Socials
                             </h3>
-                            <ul className="flex flex-wrap gap-x-6 gap-y-4 md:flex-col md:gap-0 md:space-y-3">
+                            <ul className="flex flex-col space-y-4 md:space-y-3">
                                 {['Instagram', 'X', 'LinkedIn'].map((social) => (
                                     <li key={social}>
                                         <a

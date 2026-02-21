@@ -4,8 +4,8 @@ export const Hero = () => {
     return (
         <section className="w-full border-b border-text-primary flex flex-col">
             {/* Massive Name Display */}
-            <div className="w-full flex justify-center py-3 md:py-8 px-2 md:px-8 border-b border-text-primary overflow-hidden">
-                <h1 className="text-[10vw] sm:text-[11vw] md:text-[11vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[8vw] font-black uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap text-center text-text-primary w-full max-w-[100vw] overflow-hidden px-1 lg:px-4 font-display">
+            <div className="w-full flex justify-center py-4 md:py-8 px-4 md:px-8 border-b border-text-primary overflow-hidden">
+                <h1 className="text-[9.5vw] sm:text-[11vw] md:text-[11vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[8vw] font-black uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap text-center text-text-primary w-full max-w-[100vw] overflow-hidden px-1 lg:px-4 font-display">
                     Agrim Billowria
                 </h1>
             </div>

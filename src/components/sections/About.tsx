@@ -145,19 +145,13 @@ export const About = () => {
                 </div>
 
                 {/* Massive manifesto statement */}
-                <div className="px-5 md:px-12 py-10 md:py-24 border-b border-bg-primary/10">
-                    <p className="text-[8vw] sm:text-[7vw] md:text-[4.5vw] lg:text-[3.5vw] font-black uppercase leading-[0.95] tracking-[-0.03em] md:tracking-[-0.04em] font-display">
+                <div className="px-5 md:px-12 py-12 md:py-24 border-b border-bg-primary/10">
+                    <p className="max-w-5xl text-[7.5vw] sm:text-[6.5vw] md:text-[4.5vw] lg:text-[3.5vw] font-black uppercase leading-[1.05] tracking-[-0.03em] md:tracking-[-0.04em] font-display">
                         I build systems that{" "}
                         <span className="italic font-black text-accent-primary">
                             think,
                         </span>{" "}
-                        plan,
-                        <br />
-                        and execute —
-                        <br />
-                        <span className="text-accent-primary">
-                            without being told twice.
-                        </span>
+                        plan, and execute — <span className="text-accent-primary">without being told twice.</span>
                     </p>
                 </div>
 
