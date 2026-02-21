@@ -173,11 +173,19 @@ export const NeuralNetworkBackground: React.FC = () => {
             const rect = canvas.getBoundingClientRect();
             mouse = new Vec2(e.clientX - rect.left, e.clientY - rect.top);
         };
+        const handleTouchMove = (e: TouchEvent) => {
+            if (e.touches.length > 0) {
+                const rect = canvas.getBoundingClientRect();
+                mouse = new Vec2(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
+            }
+        };
         const handleMouseLeave = () => { mouse = new Vec2(-1000, -1000); };
 
         window.addEventListener('resize', init);
         canvas.addEventListener('mousemove', handleMouseMove);
+        canvas.addEventListener('touchmove', handleTouchMove, { passive: true });
         canvas.addEventListener('mouseleave', handleMouseLeave);
+        canvas.addEventListener('touchend', handleMouseLeave);
         init();
 
         const draw = () => {
@@ -230,7 +238,9 @@ export const NeuralNetworkBackground: React.FC = () => {
         return () => {
             window.removeEventListener('resize', init);
             canvas.removeEventListener('mousemove', handleMouseMove);
+            canvas.removeEventListener('touchmove', handleTouchMove);
             canvas.removeEventListener('mouseleave', handleMouseLeave);
+            canvas.removeEventListener('touchend', handleMouseLeave);
             document.removeEventListener('visibilitychange', handleVisibilityChange);
             cancelAnimationFrame(animationFrameId);
         };

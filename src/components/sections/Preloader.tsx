@@ -77,12 +77,12 @@ export const Preloader = () => {
         >
             <div className="w-full max-w-[100vw] flex flex-col items-center justify-center px-4 md:px-8 overflow-hidden text-center gap-1 md:gap-3">
                 {/* First Name */}
-                <h1 className="text-bg-primary text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap">
+                <h1 className="text-bg-primary text-[15vw] md:text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap">
                     {firstName}
                 </h1>
 
                 {/* Last Name — identical settings to first */}
-                <h1 className="text-bg-primary text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap">
+                <h1 className="text-bg-primary text-[15vw] md:text-[19vw] font-black uppercase tracking-[-0.08em] leading-[0.8] whitespace-nowrap">
                     {lastName}
                 </h1>
             </div>
