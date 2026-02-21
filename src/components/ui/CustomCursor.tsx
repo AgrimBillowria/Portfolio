@@ -59,7 +59,7 @@ export const CustomCursor = () => {
     }, []);
 
     return (
-        <>
+        <div className="hidden md:block">
             {/* Dot */}
             <div
                 ref={cursorDotRef}
@@ -74,14 +74,16 @@ export const CustomCursor = () => {
                 style={{ willChange: "transform" }}
             />
             <style>{`
-                body { cursor: none; }
-                a, button { cursor: none; }
+                @media (min-width: 768px) {
+                    body { cursor: none; }
+                    a, button { cursor: none; }
+                }
                 #cursor-ring.cursor-hover {
                     width: 56px;
                     height: 56px;
                     border-color: #D32F2F;
                 }
             `}</style>
-        </>
+        </div>
     );
 };

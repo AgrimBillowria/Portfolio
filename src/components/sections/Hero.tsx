@@ -5,7 +5,7 @@ export const Hero = () => {
         <section className="w-full border-b border-text-primary flex flex-col">
             {/* Massive Name Display */}
             <div className="w-full flex justify-center py-3 md:py-8 px-2 md:px-8 border-b border-text-primary overflow-hidden">
-                <h1 className="text-[11vw] sm:text-[11.5vw] md:text-[11vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[8vw] font-black uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap text-center text-text-primary w-full max-w-[100vw] overflow-hidden px-1 lg:px-4">
+                <h1 className="text-[11vw] sm:text-[11.5vw] md:text-[11vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[8vw] font-black uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap text-center text-text-primary w-full max-w-[100vw] overflow-hidden px-1 lg:px-4 font-display">
                     Agrim Billowria
                 </h1>
             </div>
@@ -42,9 +42,9 @@ export const Hero = () => {
             <div className="w-full grid grid-cols-1 md:grid-cols-2">
                 {/* Left: Bio Text + quick tags */}
                 <div className="p-6 md:p-12 border-b md:border-b-0 md:border-r border-text-primary flex flex-col justify-between gap-8 md:gap-10 bg-[#F4F4F4]">
-                    <p className="text-lg md:text-2xl lg:text-3xl leading-snug font-semibold text-[#1A1A1A] tracking-tight">
+                    <p className="text-xl md:text-3xl lg:text-4xl leading-[1.15] font-bold text-[#1A1A1A] tracking-[-0.02em] font-display">
                         I build systems that think, plan, and execute —
-                        <span className="text-accent-primary"> without being told twice.</span>
+                        <span className="text-accent-primary italic"> without being told twice.</span>
                     </p>
 
                     {/* Discipline tags */}

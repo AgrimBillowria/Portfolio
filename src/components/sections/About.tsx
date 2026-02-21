@@ -146,7 +146,7 @@ export const About = () => {
 
                 {/* Massive manifesto statement */}
                 <div className="px-5 md:px-12 py-10 md:py-24 border-b border-bg-primary/10">
-                    <p className="text-[8vw] sm:text-[7vw] md:text-[4.5vw] lg:text-[3.5vw] font-black uppercase leading-[0.95] tracking-[-0.03em] md:tracking-[-0.04em]">
+                    <p className="text-[8vw] sm:text-[7vw] md:text-[4.5vw] lg:text-[3.5vw] font-black uppercase leading-[0.95] tracking-[-0.03em] md:tracking-[-0.04em] font-display">
                         I build systems that{" "}
                         <span className="italic font-black text-accent-primary">
                             think,

@@ -23,14 +23,14 @@ class Boid {
     pos: Vec2;
     vel: Vec2;
     acc: Vec2;
-    maxSpeed = 1.0;
-    maxForce = 0.02;
+    maxSpeed = 2.0;
+    maxForce = 0.05;
     isRed = false; // Mouse contamination state
 
     constructor(w: number, h: number) {
         this.pos = new Vec2(Math.random() * w, Math.random() * h);
         const angle = Math.random() * Math.PI * 2;
-        this.vel = new Vec2(Math.cos(angle) * this.maxSpeed * 0.6, Math.sin(angle) * this.maxSpeed * 0.6);
+        this.vel = new Vec2(Math.cos(angle) * this.maxSpeed * 0.8, Math.sin(angle) * this.maxSpeed * 0.8);
         this.acc = new Vec2();
     }
 
@@ -49,8 +49,8 @@ class Boid {
     flee(target: Vec2, radius: number) {
         const d = Vec2.dist(this.pos, target);
         if (d < radius) {
-            const desired = this.pos.sub(target).norm().scale(this.maxSpeed * 1.8);
-            return desired.sub(this.vel).limit(this.maxForce * 2.5);
+            const desired = this.pos.sub(target).norm().scale(this.maxSpeed * 2.0);
+            return desired.sub(this.vel).limit(this.maxForce * 3.0);
         }
         return new Vec2();
     }
@@ -96,8 +96,8 @@ class Boid {
     }
 
     update(boids: Boid[], mouse: Vec2, w: number, h: number) {
-        const flockForce = this.flock(boids, 80);
-        const fleeForce = this.flee(mouse, 160);
+        const flockForce = this.flock(boids, 100);
+        const fleeForce = this.flee(mouse, 180);
 
         // Mark red when the mouse is close to dramatically paint them
         this.isRed = Vec2.dist(this.pos, mouse) < 240;
@@ -165,8 +165,8 @@ export const NeuralNetworkBackground: React.FC = () => {
             canvas.style.width = `${W}px`;
             canvas.style.height = `${H}px`;
 
-            const boidCount = Math.floor((W * H) / 4000);
-            boids = Array.from({ length: clamp(boidCount, 60, 220) }, () => new Boid(W, H));
+            const boidCount = Math.floor((W * H) / 8000);
+            boids = Array.from({ length: clamp(boidCount, 60, 150) }, () => new Boid(W, H));
         };
 
         const handleMouseMove = (e: MouseEvent) => {

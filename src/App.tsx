@@ -5,6 +5,7 @@ import { About } from './components/sections/About'
 import { Services } from './components/sections/Services'
 import { Works } from './components/sections/Works'
 import { Contact } from './components/sections/Contact'
+import { Footer } from './components/sections/Footer'
 import { Preloader } from './components/sections/Preloader'
 import { CustomCursor } from './components/ui/CustomCursor'
 
@@ -22,6 +23,7 @@ function App() {
           <Services />
           <Contact />
         </main>
+        <Footer />
       </BlueprintWrapper>
     </>
   )

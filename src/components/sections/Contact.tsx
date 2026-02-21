@@ -1,6 +1,6 @@
 import { useState, useRef, type FormEvent } from 'react';
 
-const FORMSPREE_ID = "YOUR_FORM_ID";
+const FORMSPREE_ID = "mvzbbnrw";
 
 export const Contact = () => {
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -33,10 +33,10 @@ export const Contact = () => {
         <section id="contact" className="w-full flex-col border-b border-text-primary">
             {/* Contact Header */}
             <div className="w-full p-4 md:p-8 border-b border-text-primary bg-text-primary text-bg-primary">
-                <h2 className="text-[13vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw] font-bold uppercase tracking-tighter leading-[0.85] mb-3 md:mb-4">
+                <h2 className="text-[13vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw] font-black uppercase tracking-[-0.04em] leading-[0.85] mb-3 md:mb-4 font-display">
                     Have an idea?
                     <br />
-                    <span className="text-accent-primary">Let's talk!</span>
+                    <span className="text-accent-primary italic">Let's talk!</span>
                 </h2>
                 <p className="text-[10px] md:text-sm tracking-[0.15em] md:tracking-widest uppercase font-bold text-bg-primary/70 mt-6 md:mt-8">
                     [ PROJECT INQUIRIES &amp; COLLABORATIONS ]
@@ -49,39 +49,42 @@ export const Contact = () => {
                 <div className="p-5 md:p-8 border-b md:border-b-0 md:border-r border-text-primary bg-bg-primary flex flex-col justify-between gap-8 md:gap-0">
                     <div className="space-y-8 md:space-y-12">
                         <div>
-                            <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-text-subtle mb-3 md:mb-4">
+                            <h3 className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-text-subtle mb-3 md:mb-5 opacity-60">
                                 // Direct Email
                             </h3>
-                            <a href="mailto:agrimbillowria@gmail.com" className="text-base md:text-3xl font-medium tracking-wide hover:text-accent-primary transition-colors block mb-6 md:mb-8 break-all">
+                            <a href="mailto:agrimbillowria@gmail.com" className="text-xl md:text-3xl lg:text-4xl font-bold tracking-tight hover:text-accent-primary transition-colors block mb-8 md:mb-12 break-all font-display">
                                 agrimbillowria@gmail.com
                             </a>
 
-                            <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-text-subtle mb-3 md:mb-4">
+                            <h3 className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-text-subtle mb-3 md:mb-5 opacity-60">
                                 // Direct Phone
                             </h3>
-                            <a href="tel:+919596694166" className="text-base md:text-3xl font-medium tracking-wide hover:text-accent-primary transition-colors block">
+                            <a href="tel:+919596694166" className="text-xl md:text-3xl lg:text-4xl font-bold tracking-tight hover:text-accent-primary transition-colors block font-display">
                                 +91 9596694166
                             </a>
                         </div>
 
                         <div>
-                            <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-text-subtle mb-3 md:mb-4">
+                            <h3 className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-text-subtle mb-4 md:mb-6 opacity-60">
                                 // Socials
                             </h3>
-                            {/* Horizontal on mobile, vertical on desktop */}
-                            <ul className="flex flex-wrap gap-4 md:flex-col md:gap-0 md:space-y-2">
-                                <li><a href="https://www.instagram.com/agrimbillowria/" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-xs md:text-sm hover:text-accent-primary transition-colors">Instagram</a></li>
-                                <li><a href="https://x.com/AgrimBillowria" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-xs md:text-sm hover:text-accent-primary transition-colors">X</a></li>
-                                <li><a href="https://www.linkedin.com/in/agrimbillowria01/" target="_blank" rel="noopener noreferrer" className="font-bold tracking-widest uppercase text-xs md:text-sm hover:text-accent-primary transition-colors">LinkedIn</a></li>
+                            <ul className="flex flex-wrap gap-x-6 gap-y-4 md:flex-col md:gap-0 md:space-y-3">
+                                {['Instagram', 'X', 'LinkedIn'].map((social) => (
+                                    <li key={social}>
+                                        <a
+                                            href={social === 'Instagram' ? 'https://www.instagram.com/agrimbillowria/' : social === 'X' ? 'https://x.com/AgrimBillowria' : 'https://www.linkedin.com/in/agrimbillowria01/'}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="font-black tracking-[0.1em] uppercase text-sm md:text-lg hover:text-accent-primary transition-all hover:translate-x-1 inline-block font-display"
+                                        >
+                                            {social}
+                                        </a>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
 
-                    <div className="pt-6 md:pt-8 border-t border-text-primary/10">
-                        <p className="text-xs font-medium tracking-wide text-text-subtle uppercase">
-                            © {new Date().getFullYear()} Agrim Billowria. All rights reserved.
-                        </p>
-                    </div>
                 </div>
 
                 {/* Form */}
@@ -91,8 +94,8 @@ export const Contact = () => {
                             <svg className="w-14 h-14 md:w-20 md:h-20 text-accent-primary mb-4 md:mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                             </svg>
-                            <h3 className="text-2xl md:text-5xl font-bold uppercase tracking-tighter">Message Received</h3>
-                            <p className="mt-3 md:mt-4 text-text-subtle uppercase tracking-widest font-bold text-xs md:text-base">I'll get back to you shortly.</p>
+                            <h3 className="text-2xl md:text-5xl font-black uppercase tracking-tighter font-display">Message Received</h3>
+                            <p className="mt-3 md:mt-4 text-text-subtle uppercase tracking-[0.2em] font-bold text-xs md:text-sm font-sans underline underline-offset-4 decoration-accent-primary">I'll get back to you shortly.</p>
                         </div>
                     ) : (
                         <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col h-full w-full relative">

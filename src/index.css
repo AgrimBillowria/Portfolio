@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', 'Helvetica Neue', sans-serif;
-  --font-display: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
 
   --color-bg-primary: #F4F4F4;
   --color-accent-primary: #D32F2F;
