@@ -48,22 +48,37 @@ export const NavigationHeader = () => {
     return (
         <>
             {/* Desktop Nav */}
-            <header className="w-full border-b border-text-primary uppercase text-sm tracking-widest font-medium sticky top-0 bg-bg-primary z-50">
+            <header className="w-full border-b border-text-primary/10 sticky top-0 bg-bg-primary z-50">
                 {/* Desktop layout */}
-                <div className="hidden md:grid md:grid-cols-3">
-                    {navLinks.map((link, i) => (
+                <div className="hidden md:flex items-center justify-between px-12 py-5 max-w-[1400px] mx-auto">
+                    {/* Logo block */}
+                    <div className="text-xl font-black tracking-tighter">
+                        AB<span className="text-red-500">.</span>
+                    </div>
+                    {/* Center Navigation */}
+                    <div className="flex items-center gap-12">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className={`text-[11px] font-bold uppercase tracking-[0.25em] transition-colors cursor-pointer ${activeSection === link.id
+                                        ? "text-text-primary"
+                                        : "text-text-primary/50 hover:text-text-primary"
+                                    }`}
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                    </div>
+                    {/* CTA Button */}
+                    <div>
                         <a
-                            key={link.href}
-                            href={link.href}
-                            className={`p-6 flex items-center justify-center transition-colors cursor-pointer ${i < navLinks.length - 1 ? "border-r border-text-primary" : ""
-                                } ${activeSection === link.id
-                                    ? "bg-text-primary text-bg-primary"
-                                    : "hover:bg-text-primary hover:text-bg-primary"
-                                }`}
+                            href="#contact"
+                            className="border border-text-primary px-8 py-3 text-[11px] font-bold uppercase tracking-[0.25em] hover:bg-text-primary hover:text-bg-primary transition-colors"
                         >
-                            {link.label}
+                            LET'S TALK
                         </a>
-                    ))}
+                    </div>
                 </div>
 
                 {/* Mobile layout */}
