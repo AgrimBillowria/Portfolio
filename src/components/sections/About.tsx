@@ -144,7 +144,6 @@ export const About = () => {
                     </span>
                 </div>
 
-                {/* Massive manifesto statement */}
                 <div className="px-5 md:px-12 py-12 md:py-24 border-b border-bg-primary/10">
                     <p className="max-w-5xl text-[7.5vw] sm:text-[6.5vw] md:text-[4.5vw] lg:text-[3.5vw] font-black uppercase leading-[1.05] tracking-[-0.03em] md:tracking-[-0.04em] font-display">
                         I build systems that{" "}
@@ -160,9 +159,9 @@ export const About = () => {
                     {stats.map((stat, i) => (
                         <div
                             key={i}
-                            className={`p-6 md:p-12 flex flex-col justify-between group cursor-default hover:bg-accent-primary transition-colors duration-300 border-bg-primary/10 ${i > 0 ? "border-l" : ""} ${i >= 2 ? "border-t md:border-t-0" : ""}`}
+                            className={`p-5 md:p-12 flex flex-col justify-between group cursor-default hover:bg-accent-primary transition-colors duration-300 border-bg-primary/10 min-h-[140px] md:min-h-0 ${i % 2 !== 0 ? "border-l" : ""} ${i > 0 && i % 2 === 0 ? "md:border-l" : ""} ${i >= 2 ? "border-t md:border-t-0" : ""}`}
                         >
-                            <span className="text-[12vw] sm:text-[10vw] md:text-[4.5vw] font-black leading-none tracking-tight text-bg-primary">
+                            <span className="text-[10vw] sm:text-[8vw] md:text-[4.5vw] font-black leading-none tracking-tight text-bg-primary mt-auto">
                                 {stat.number}
                             </span>
                             <span className="text-[9px] md:text-xs font-bold tracking-[0.2em] uppercase text-bg-primary/40 group-hover:text-bg-primary transition-colors mt-3 md:mt-4">

@@ -69,7 +69,7 @@ export const Works = () => {
                     >
                         {project.isImageBlock ? (
                             /* Image blocks: fixed height on mobile */
-                            <div className="group w-full bg-[#E8E8E8] flex items-center justify-center cursor-pointer overflow-hidden relative h-[260px] sm:h-[340px] md:h-[500px] border-b border-text-primary">
+                            <div className="group w-full bg-[#E8E8E8] flex items-center justify-center cursor-pointer overflow-hidden relative h-[220px] sm:h-[300px] md:h-[500px] border-text-primary">
                                 {/* Analog Duct Tape */}
                                 <div className="absolute -top-4 -right-8 w-32 h-10 bg-[#e5e5e5]/80 backdrop-blur-sm rotate-[15deg] z-20 border-y border-black/5 shadow-[0_2px_4px_rgba(0,0,0,0.1)]"></div>
                                 <div className="absolute -bottom-5 -left-8 w-32 h-10 bg-[#e5e5e5]/80 backdrop-blur-sm -rotate-[15deg] z-20 border-y border-black/5 shadow-[0_2px_4px_rgba(0,0,0,0.1)] pt-1">
@@ -129,7 +129,7 @@ export const Works = () => {
                                         </div>
                                         <span className="text-xs md:text-base">[ {project.year} ]</span>
                                     </div>
-                                    <h3 className="text-[9vw] sm:text-[8vw] md:text-[5vw] lg:text-[4vw] xl:text-[3.5vw] font-bold uppercase tracking-[-0.05em] leading-[0.85] mt-4 md:mt-8 break-words">
+                                    <h3 className="text-[7.5vw] sm:text-[6vw] md:text-[5vw] lg:text-[4vw] xl:text-[3.5vw] font-black uppercase tracking-[-0.04em] leading-[0.9] mt-3 md:mt-8 break-words text-bg-primary">
                                         {project.name}
                                     </h3>
                                 </div>

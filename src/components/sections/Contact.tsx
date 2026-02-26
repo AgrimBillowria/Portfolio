@@ -33,7 +33,7 @@ export const Contact = () => {
         <section id="contact" className="w-full flex-col border-b border-text-primary">
             {/* Contact Header */}
             <div className="w-full p-4 md:p-8 border-b border-text-primary bg-text-primary text-bg-primary">
-                <h2 className="text-[11vw] sm:text-[10vw] md:text-[8vw] lg:text-[7vw] font-black uppercase tracking-[-0.04em] leading-[0.95] mb-3 md:mb-4 font-display">
+                <h2 className="text-[9vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw] font-black uppercase tracking-[-0.04em] leading-[0.95] mb-3 md:mb-4 font-display">
                     Have an idea?
                     <br />
                     <span className="text-accent-primary italic">Let's talk!</span>
@@ -52,7 +52,7 @@ export const Contact = () => {
                             <h3 className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-text-subtle mb-3 md:mb-5 opacity-60">
                                 // Direct Email
                             </h3>
-                            <a href="mailto:agrimbillowria@gmail.com" className="text-xl md:text-3xl lg:text-4xl font-bold tracking-tight hover:text-accent-primary transition-colors block mb-8 md:mb-12 break-all font-display">
+                            <a href="mailto:agrimbillowria@gmail.com" className="text-lg md:text-3xl lg:text-4xl font-bold tracking-tight hover:text-accent-primary transition-colors block mb-8 md:mb-12 max-w-full truncate font-display">
                                 agrimbillowria@gmail.com
                             </a>
 

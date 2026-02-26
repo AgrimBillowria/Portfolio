@@ -5,7 +5,7 @@ export const Hero = () => {
         <section className="w-full border-b border-text-primary flex flex-col">
             {/* Massive Name Display */}
             <div className="w-full flex justify-center py-4 md:py-8 px-4 md:px-8 border-b border-text-primary overflow-hidden">
-                <h1 className="text-[12vw] sm:text-[11vw] md:text-[10vw] lg:text-[8.5vw] xl:text-[7.5rem] 2xl:text-[8rem] font-black uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap text-center text-text-primary w-full overflow-hidden px-1 font-display">
+                <h1 className="text-[14vw] sm:text-[11vw] md:text-[10vw] lg:text-[8.5vw] xl:text-[7.5rem] 2xl:text-[8rem] font-black uppercase tracking-[-0.05em] leading-[0.8] whitespace-normal sm:whitespace-nowrap break-words text-center text-text-primary w-full px-1 font-display">
                     Agrim Billowria
                 </h1>
             </div>
