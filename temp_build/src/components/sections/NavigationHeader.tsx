@@ -7,35 +7,29 @@ export const NavigationHeader = () => {
     const navLinks = [
         { href: "#works", label: "Works", id: "works" },
         { href: "#about", label: "About", id: "about" },
-        { href: "#education", label: "Education", id: "education" },
-        { href: "#certificates", label: "Certificates", id: "certificates" },
         { href: "#contact", label: "Contact", id: "contact" },
     ];
 
-    // ── Better Scroll-spy via IntersectionObserver ────────────────────
+    // ── Scroll-spy via IntersectionObserver ────────────────────
     useEffect(() => {
-        const observerOptions = {
-            root: null,
-            rootMargin: '-20% 0px -70% 0px', // Trigger when section is in the upper middle area
-            threshold: 0
-        };
+        const sectionIds = navLinks.map((l) => l.id);
+        const observers: IntersectionObserver[] = [];
 
-        const observerCallback = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveSection(entry.target.id);
-                }
-            });
-        };
+        sectionIds.forEach((id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
 
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-        navLinks.forEach((link) => {
-            const el = document.getElementById(link.id);
-            if (el) observer.observe(el);
+            const obs = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) setActiveSection(id);
+                },
+                { threshold: 0.3 }
+            );
+            obs.observe(el);
+            observers.push(obs);
         });
 
-        return () => observer.disconnect();
+        return () => observers.forEach((o) => o.disconnect());
     }, []);
 
     // ── mobile menu scroll lock ────────────────────
@@ -54,7 +48,7 @@ export const NavigationHeader = () => {
     return (
         <>
             {/* Desktop Nav */}
-            <header className="fixed top-0 left-0 w-full border-b border-text-primary/10 bg-bg-primary z-[100]">
+            <header className="w-full border-b border-text-primary/10 sticky top-0 bg-bg-primary z-50">
                 {/* Desktop layout */}
                 <div className="hidden md:flex items-center justify-between px-12 py-5 max-w-[1400px] mx-auto">
                     {/* Logo block */}
@@ -67,8 +61,7 @@ export const NavigationHeader = () => {
                             <a
                                 key={link.href}
                                 href={link.href}
-                                aria-label={`Navigate to ${link.label} section`}
-                                className={`text-[11px] font-bold uppercase tracking-[0.25em] transition-colors cursor-pointer p-2 -m-2 ${activeSection === link.id
+                                className={`text-[11px] font-bold uppercase tracking-[0.25em] transition-colors cursor-pointer ${activeSection === link.id
                                         ? "text-text-primary"
                                         : "text-text-primary/50 hover:text-text-primary"
                                     }`}
@@ -93,8 +86,8 @@ export const NavigationHeader = () => {
                     <span className="font-black tracking-tight text-text-primary text-sm uppercase">Agrim Billowria</span>
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
-                        aria-label={menuOpen ? "Close menu" : "Open menu"}
-                        className="w-11 h-11 flex flex-col items-center justify-center gap-[6px] group focus:outline-none"
+                        aria-label="Toggle menu"
+                        className="w-10 h-10 flex flex-col items-center justify-center gap-[6px] group focus:outline-none"
                     >
                         <span className={`block h-[2px] bg-text-primary transition-all duration-300 ${menuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`} />
                         <span className={`block h-[2px] bg-text-primary transition-all duration-300 ${menuOpen ? "opacity-0 w-4" : "w-4"}`} />
@@ -124,8 +117,7 @@ export const NavigationHeader = () => {
                                     <a
                                         href={link.href}
                                         onClick={() => setMenuOpen(false)}
-                                        aria-label={`Navigate to ${link.label} section`}
-                                        className={`block text-[10vw] sm:text-[10vw] font-black uppercase leading-none tracking-[-0.04em] transition-colors py-4 border-b border-bg-primary/20 ${activeSection === link.id ? "text-accent-primary" : "hover:text-accent-primary"
+                                        className={`block text-[10vw] sm:text-[10vw] font-black uppercase leading-none tracking-[-0.04em] transition-colors py-2 border-b border-bg-primary/20 ${activeSection === link.id ? "text-accent-primary" : "hover:text-accent-primary"
                                             }`}
                                     >
                                         {String(i + 1).padStart(2, "0")} &nbsp; {link.label}

@@ -23,8 +23,8 @@ export const Hero = () => {
                 </div>
 
                 {/* Bottom-left descriptor */}
-                <div className="absolute bottom-3 md:bottom-6 left-3 md:left-8 text-bg-primary/80 text-[9px] md:text-xs font-bold tracking-[0.2em] uppercase pointer-events-none z-10 animate-pulse">
-                    Tap / Hover to interact
+                <div className="absolute bottom-3 md:bottom-6 left-3 md:left-8 text-bg-primary/60 text-[9px] md:text-xs font-bold tracking-[0.2em] uppercase pointer-events-none z-10">
+                    Hover to interact
                 </div>
 
                 {/* Bottom-right version tag */}
@@ -85,7 +85,6 @@ export const Hero = () => {
                             href={social.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={`Visit my ${social.label} profile`}
                             className="group flex items-center justify-between px-6 md:px-12 py-4 md:py-5 border-b border-text-primary hover:bg-text-primary hover:text-bg-primary transition-all duration-300"
                         >
                             <div className="flex flex-col">

@@ -13,7 +13,7 @@ export const Works = () => {
         },
         {
             isImageBlock: true,
-            imageSrc: "/projects/resume_classifier.png",
+            imageSrc: "/image copy.png",
             imageLabel: "Resume Classifier AI Interface"
         },
         {
@@ -69,7 +69,7 @@ export const Works = () => {
                     >
                         {project.isImageBlock ? (
                             /* Image blocks: fixed height on mobile */
-                            <div className="group w-full bg-[#1A1A1A] flex items-center justify-center cursor-pointer overflow-hidden relative h-[220px] sm:h-[300px] md:h-[500px] border-text-primary">
+                            <div className="group w-full bg-[#E8E8E8] flex items-center justify-center cursor-pointer overflow-hidden relative h-[220px] sm:h-[300px] md:h-[500px] border-text-primary">
                                 {/* Analog Duct Tape */}
                                 <div className="absolute -top-4 -right-8 w-32 h-10 bg-[#e5e5e5]/80 backdrop-blur-sm rotate-[15deg] z-20 border-y border-black/5 shadow-[0_2px_4px_rgba(0,0,0,0.1)]"></div>
                                 <div className="absolute -bottom-5 -left-8 w-32 h-10 bg-[#e5e5e5]/80 backdrop-blur-sm -rotate-[15deg] z-20 border-y border-black/5 shadow-[0_2px_4px_rgba(0,0,0,0.1)] pt-1">
@@ -78,9 +78,7 @@ export const Works = () => {
                                 <img
                                     src={project.imageSrc}
                                     alt={project.imageLabel}
-                                    className={`w-full h-full transition-all duration-700 group-hover:scale-105 ${
-                                        project.imageSrc?.startsWith('/') ? 'object-contain p-4' : 'object-cover'
-                                    }`}
+                                    className="w-full h-full object-cover filter grayscale-[40%] md:grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-black/10 md:bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
                                 <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-4 md:p-6 translate-y-0 md:translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-gradient-to-t from-black/60 to-transparent md:from-transparent">
@@ -96,7 +94,6 @@ export const Works = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 data-cursor
-                                aria-label={`View details for ${project.name}`}
                                 className="w-full bg-accent-primary flex flex-col justify-between p-5 md:p-8 text-bg-primary hover:bg-[#B71C1C] transition-colors duration-500 cursor-pointer group relative block min-h-[280px] md:min-h-[500px]"
                             >
                                 {/* Sketchy Border Hover Effect */}
