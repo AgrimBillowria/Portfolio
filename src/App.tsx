@@ -8,6 +8,8 @@ import { Contact } from './components/sections/Contact'
 import { Footer } from './components/sections/Footer'
 import { Preloader } from './components/sections/Preloader'
 import { CustomCursor } from './components/ui/CustomCursor'
+import { Education } from './components/sections/Education'
+import { Certificates } from './components/sections/Certificates'
 
 function App() {
   return (
@@ -16,11 +18,14 @@ function App() {
       <Preloader />
       <BlueprintWrapper>
         <NavigationHeader />
+        <div className="h-[69px]"></div>
         <main className="flex-1 flex flex-col">
           <Hero />
           <Works />
           <About />
           <Services />
+          <Education />
+          <Certificates />
           <Contact />
         </main>
         <Footer />

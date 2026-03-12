@@ -7,29 +7,35 @@ export const NavigationHeader = () => {
     const navLinks = [
         { href: "#works", label: "Works", id: "works" },
         { href: "#about", label: "About", id: "about" },
+        { href: "#education", label: "Education", id: "education" },
+        { href: "#certificates", label: "Certificates", id: "certificates" },
         { href: "#contact", label: "Contact", id: "contact" },
     ];
 
-    // ── Scroll-spy via IntersectionObserver ────────────────────
+    // ── Better Scroll-spy via IntersectionObserver ────────────────────
     useEffect(() => {
-        const sectionIds = navLinks.map((l) => l.id);
-        const observers: IntersectionObserver[] = [];
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px', // Trigger when section is in the upper middle area
+            threshold: 0
+        };
 
-        sectionIds.forEach((id) => {
-            const el = document.getElementById(id);
-            if (!el) return;
+        const observerCallback = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
 
-            const obs = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) setActiveSection(id);
-                },
-                { threshold: 0.3 }
-            );
-            obs.observe(el);
-            observers.push(obs);
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        navLinks.forEach((link) => {
+            const el = document.getElementById(link.id);
+            if (el) observer.observe(el);
         });
 
-        return () => observers.forEach((o) => o.disconnect());
+        return () => observer.disconnect();
     }, []);
 
     // ── mobile menu scroll lock ────────────────────
@@ -48,7 +54,7 @@ export const NavigationHeader = () => {
     return (
         <>
             {/* Desktop Nav */}
-            <header className="w-full border-b border-text-primary/10 sticky top-0 bg-bg-primary z-50">
+            <header className="fixed top-0 left-0 w-full border-b border-text-primary/10 bg-bg-primary z-[100]">
                 {/* Desktop layout */}
                 <div className="hidden md:flex items-center justify-between px-12 py-5 max-w-[1400px] mx-auto">
                     {/* Logo block */}
