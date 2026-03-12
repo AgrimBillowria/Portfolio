@@ -7,16 +7,13 @@ export const Works = () => {
     const projects = [
         {
             name: "Resume Classifier",
-            year: "2024",
-            type: "ML & AGENTIC AI",
-            description: "An end-to-end ML ecosystem that processes, classifies, and ranks thousands of resumes with surgical precision using custom LLM agents.",
-            link: "https://resume-classifier.netlify.app/",
-            isImageBlock: false,
-            isFeatured: true
-        },
-        {
+            type: "Agentic AI Application",
+            year: "2025",
+            description: "An intelligent pipeline that autonomously categorizes and extracts key data from mixed resume formats using LLMs.",
+            link: "https://www.linkedin.com/posts/agrimbillowria01_resumeanalyzer-aiagent-streamlit-activity-7278783471012921344-9y3P?utm_source=share&utm_medium=member_desktop",
+            isFeatured: true,
             isImageBlock: true,
-            imageSrc: "/projects/resume_classifier.png",
+            imageSrc: "/projects/resume_classifier.webp",
             imageLabel: "Resume Classifier AI Interface"
         },
         {

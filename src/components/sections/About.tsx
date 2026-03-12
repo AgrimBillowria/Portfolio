@@ -163,13 +163,13 @@ export const About = () => {
                         <div className="absolute -bottom-5 -left-8 w-32 h-10 bg-[#e5e5e5]/10 backdrop-blur-sm -rotate-[15deg] z-20 border-y border-bg-primary/5 shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
                             <div className="w-full h-[1px] bg-bg-primary/5 mt-1"></div>
                         </div>
-
-                        {/* Image */}
-                        <img
-                            src="/Professional%20Picture/IMG_8085.jpeg"
-                            alt="Agrim Billowria — Agentic AI Engineer"
-                            className="about-portrait w-full h-full object-cover object-[50%_55%] transition-all duration-700 group-hover:scale-105"
-                        />
+                        <div className="absolute inset-x-2 inset-y-2 max-w-[400px] w-[90%] mx-auto z-20">
+                            <img
+                                src="/Professional Picture/IMG_8085.webp"
+                                alt="Agrim Billowria Portrait"
+                                className="w-full h-full object-cover about-portrait"
+                            />
+                        </div>
 
                         {/* Red accent overlay on hover */}
                         <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/15 mix-blend-multiply transition-all duration-500 z-10"></div>
