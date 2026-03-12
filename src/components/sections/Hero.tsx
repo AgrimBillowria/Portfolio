@@ -23,8 +23,8 @@ export const Hero = () => {
                 </div>
 
                 {/* Bottom-left descriptor */}
-                <div className="absolute bottom-3 md:bottom-6 left-3 md:left-8 text-bg-primary/60 text-[9px] md:text-xs font-bold tracking-[0.2em] uppercase pointer-events-none z-10">
-                    Hover to interact
+                <div className="absolute bottom-3 md:bottom-6 left-3 md:left-8 text-bg-primary/80 text-[9px] md:text-xs font-bold tracking-[0.2em] uppercase pointer-events-none z-10 animate-pulse">
+                    Tap / Hover to interact
                 </div>
 
                 {/* Bottom-right version tag */}

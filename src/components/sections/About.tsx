@@ -120,8 +120,8 @@ const FlowFieldCanvas = () => {
 const stats = [
     { number: "3+", label: "Years Engineering" },
     { number: "15+", label: "Agents Deployed" },
-    { number: "∞", label: "Automation Loops" },
-    { number: "01", label: "Singular Vision" },
+    { number: "50+", label: "Automations Built" },
+    { number: "10K+", label: "Docs Processed" },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -154,6 +154,94 @@ export const About = () => {
                     </p>
                 </div>
 
+                {/* ── Portrait + Bio Block ─────────────────────────────── */}
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 border-b border-bg-primary/10">
+                    {/* Left — Photo */}
+                    <div className="group relative overflow-hidden border-b md:border-b-0 md:border-r border-bg-primary/10 h-[380px] sm:h-[460px] md:h-[520px] cursor-default">
+                        {/* Analog duct-tape accents */}
+                        <div className="absolute -top-4 -right-8 w-32 h-10 bg-[#e5e5e5]/10 backdrop-blur-sm rotate-[15deg] z-20 border-y border-bg-primary/5 shadow-[0_2px_4px_rgba(0,0,0,0.3)]"></div>
+                        <div className="absolute -bottom-5 -left-8 w-32 h-10 bg-[#e5e5e5]/10 backdrop-blur-sm -rotate-[15deg] z-20 border-y border-bg-primary/5 shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+                            <div className="w-full h-[1px] bg-bg-primary/5 mt-1"></div>
+                        </div>
+
+                        {/* Image */}
+                        <img
+                            src="/Professional%20Picture/IMG_8085.jpeg"
+                            alt="Agrim Billowria — Agentic AI Engineer"
+                            className="about-portrait w-full h-full object-cover object-[50%_55%] transition-all duration-700 group-hover:scale-105"
+                        />
+
+                        {/* Red accent overlay on hover */}
+                        <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/15 mix-blend-multiply transition-all duration-500 z-10"></div>
+
+                        {/* Grain texture overlay */}
+                        <div className="absolute inset-0 opacity-[0.08] z-10 pointer-events-none" style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
+                        }}></div>
+
+                        {/* Corner label */}
+                        <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                            <span className="text-[9px] md:text-[10px] font-bold tracking-[0.25em] uppercase text-bg-primary/60 bg-[#1A1A1A]/60 backdrop-blur-sm px-2.5 py-1.5">
+                                // Portrait 2026
+                            </span>
+                        </div>
+
+                        {/* Scan-line effect */}
+                        <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.03]" style={{
+                            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(244,244,244,0.5) 2px, rgba(244,244,244,0.5) 4px)',
+                        }}></div>
+                    </div>
+
+                    {/* Right — Bio text */}
+                    <div className="p-6 md:p-12 flex flex-col justify-between gap-8 md:gap-10">
+                        <div className="flex flex-col gap-6 md:gap-8">
+                            <span className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-bg-primary/40">
+                                // The Person Behind the Systems
+                            </span>
+
+                            <p className="text-base md:text-lg lg:text-xl leading-[1.6] md:leading-[1.7] font-medium text-bg-primary/80 max-w-xl text-left text-pretty">
+                                I'm <span className="text-bg-primary font-bold">Agrim Billowria</span> — an Agentic AI Engineer obsessed with building autonomous systems that don't just follow instructions but{" "}
+                                <span className="text-accent-primary italic font-bold">think for themselves.</span>{" "}
+                                From multi-agent orchestration to end-to-end business automation, I design intelligent pipelines that scale, adapt, and execute with zero hand-holding.
+                            </p>
+
+                            {/* Discipline tags */}
+                            <div className="flex flex-wrap gap-2">
+                                {["Agentic AI", "LLM Engineering", "Automation", "Multi-Agent Systems", "n8n / LangChain", "Local AI Infra"].map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="text-[9px] md:text-[10px] font-bold tracking-[0.15em] uppercase border border-bg-primary/35 px-2.5 py-1.5 text-bg-primary/70 hover:bg-bg-primary hover:text-[#1A1A1A] transition-all duration-200 cursor-default"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Actions & Availability */}
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 border-t border-bg-primary/10 pt-6">
+                            <a 
+                                href="/CV/Agrim_Billowria_Resume_v6.docx.pdf" 
+                                download="Agrim_Billowria_CV.pdf"
+                                className="border border-accent-primary bg-accent-primary/10 text-accent-primary px-6 py-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] hover:bg-accent-primary hover:text-bg-primary transition-all duration-300"
+                            >
+                                Download CV ↓
+                            </a>
+                            
+                            {/* Availability indicator */}
+                        <div className="flex items-center gap-3">
+                            <span className="relative flex h-2 w-2 flex-shrink-0">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"></span>
+                            </span>
+                            <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-bg-primary/40">
+                                Open to collaborations — 2026
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
                 {/* Stats Grid — 2 cols on mobile, 4 on md+ */}
                 <div className="w-full grid grid-cols-2 md:grid-cols-4 border-b border-bg-primary/10">
                     {stats.map((stat, i) => (
@@ -181,6 +269,16 @@ export const About = () => {
                     </span>
                 </div>
             </div>
+
+            {/* Portrait filter styles */}
+            <style>{`
+                .about-portrait {
+                    filter: grayscale(100%) contrast(1.1) brightness(1.05);
+                }
+                .group:hover .about-portrait {
+                    filter: grayscale(40%) contrast(1.1) brightness(1.1);
+                }
+            `}</style>
         </section>
     );
 };

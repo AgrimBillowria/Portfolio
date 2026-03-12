@@ -24,7 +24,7 @@ export const Services = () => {
     ];
 
     return (
-        <section id="awards" className="w-full flex flex-col border-b border-text-primary">
+        <section id="services" className="w-full flex flex-col border-b border-text-primary">
             {/* Section Header */}
             <div ref={headerRef} className="reveal w-full p-4 md:p-8 border-b border-text-primary">
                 <h2 className="text-base md:text-2xl font-medium tracking-wide">Core Expertise &amp; Skills</h2>

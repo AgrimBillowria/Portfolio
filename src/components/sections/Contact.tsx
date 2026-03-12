@@ -142,7 +142,7 @@ export const Contact = () => {
                             <button
                                 type="submit"
                                 disabled={status === 'submitting'}
-                                className="w-full p-5 md:p-8 bg-text-primary text-bg-primary group relative overflow-hidden text-base md:text-2xl font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] hover:bg-black transition-colors duration-300"
+                                className="w-full p-5 md:p-8 bg-text-primary text-bg-primary group relative overflow-hidden text-base md:text-2xl font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] hover:bg-accent-primary transition-colors duration-300"
                             >
                                 <span className={`transition-opacity duration-300 ${status === 'submitting' ? 'opacity-0' : 'opacity-100'}`}>
                                     Send Message
