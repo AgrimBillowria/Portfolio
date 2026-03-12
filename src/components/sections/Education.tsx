@@ -8,19 +8,31 @@ export const Education = () => {
             degree: "B.Tech CSE (AI & Machine Learning)",
             institution: "Lovely Professional University, Punjab",
             date: "Aug 2023 – May 2027",
-            score: "CGPA: 6.9"
+            score: "CGPA: 6.9",
+            highlights: [
+                "Focus on algorithms, neural networks, and prompt engineering.",
+                "Active in local AI hackathons and open-source contributions."
+            ]
         },
         {
             degree: "Intermediate (Class XII)",
             institution: "MHAC Nagbani School, J&K",
             date: "Mar 2022 – May 2023",
-            score: "71%"
+            score: "71%",
+            highlights: [
+                "Core sciences and advanced mathematics specialization.",
+                "Developed foundational programming logic."
+            ]
         },
         {
             degree: "Matriculation (Class X)",
             institution: "MHAC Nagbani School, J&K",
             date: "Mar 2020 – May 2021",
-            score: "81%"
+            score: "81%",
+            highlights: [
+                "General academic excellence with focus on STEM subjects.",
+                "Participated in regional coding olympiads."
+            ]
         }
     ];
 
@@ -70,9 +82,18 @@ export const Education = () => {
                                     <h4 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-[#1A1A1A] group-hover:text-accent-primary transition-colors duration-300">
                                         {item.degree}
                                     </h4>
-                                    <p className="text-[#1A1A1A]/70 font-medium text-lg max-w-xl">
+                                    <p className="text-[#1A1A1A]/70 font-medium text-lg max-w-xl mb-6">
                                         {item.institution}
                                     </p>
+                                    
+                                    <ul className="space-y-2 opacity-80 pl-4 border-l-2 border-accent-primary/50">
+                                        {item.highlights.map((highlight, idx) => (
+                                            <li key={idx} className="text-sm font-medium tracking-wide text-[#1A1A1A]/90 max-w-2xl relative">
+                                                <span className="text-accent-primary mr-2font-bold"></span> 
+                                                {highlight}
+                                            </li>
+                                        ))}
+                                    </ul>
                                     
                                     {/* Structural Divider */}
                                     <div className="w-full h-[1px] bg-[#1A1A1A]/10 mt-8 md:mt-10 group-hover:bg-accent-primary/30 transition-colors duration-500"></div>

@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 export const Works = () => {
+    const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
+
     const projects = [
         {
             name: "Resume Classifier",
@@ -75,12 +78,40 @@ export const Works = () => {
                                 <div className="absolute -bottom-5 -left-8 w-32 h-10 bg-[#e5e5e5]/80 backdrop-blur-sm -rotate-[15deg] z-20 border-y border-black/5 shadow-[0_2px_4px_rgba(0,0,0,0.1)] pt-1">
                                     <div className="w-full h-[1px] bg-black/5"></div>
                                 </div>
+                                {/* Image Loading Skeleton */}
+                                <div className={`absolute inset-0 bg-[#222222] z-10 flex items-center justify-center transition-opacity duration-700 ease-in-out ${loadedImages[index] ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                                    {/* Brutalist Skeleton Wireframe */}
+                                    <div className="w-[80%] h-[80%] border border-white/10 flex flex-col justify-between p-4 relative overflow-hidden">
+                                        {/* Scanning line animation */}
+                                        <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-transparent via-white/5 to-transparent animate-[scan_2s_ease-in-out_infinite]" />
+                                        
+                                        <div className="flex justify-between items-start">
+                                            <div className="w-16 h-2 bg-white/20 animate-pulse" />
+                                            <div className="w-8 h-2 bg-accent-primary/40" />
+                                        </div>
+                                        <div className="space-y-2 w-2/3 mt-4">
+                                            <div className="h-1 bg-white/10 w-full" />
+                                            <div className="h-1 bg-white/10 w-4/5" />
+                                            <div className="h-1 bg-white/10 w-1/2" />
+                                        </div>
+                                        <div className="flex justify-end mt-auto">
+                                            <div className="w-12 h-12 border border-white/20 flex items-center justify-center">
+                                                <div className="w-4 h-4 rounded-full border border-white/30 animate-ping" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span className="absolute bottom-4 left-4 text-[9px] font-black uppercase tracking-[0.3em] text-white/30 animate-pulse">
+                                        FETCHING_ASSET
+                                    </span>
+                                </div>
+
                                 <img
                                     src={project.imageSrc}
                                     alt={project.imageLabel}
+                                    onLoad={() => setLoadedImages((prev: Record<number, boolean>) => ({ ...prev, [index]: true }))}
                                     className={`w-full h-full transition-all duration-700 group-hover:scale-105 ${
                                         project.imageSrc?.startsWith('/') ? 'object-contain p-4' : 'object-cover'
-                                    }`}
+                                    } ${loadedImages[index] ? 'opacity-100' : 'opacity-0'}`}
                                 />
                                 <div className="absolute inset-0 bg-black/10 md:bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
                                 <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-4 md:p-6 translate-y-0 md:translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-gradient-to-t from-black/60 to-transparent md:from-transparent">
