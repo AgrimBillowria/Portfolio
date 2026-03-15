@@ -37,10 +37,7 @@ export const BlueprintWrapper = ({ children }: BlueprintWrapperProps) => {
         <div className="w-full min-h-screen bg-bg-primary text-text-primary relative overflow-x-hidden">
 
             {/* Left Margin - Continuous Densely Populated Doodle Art */}
-            <div 
-                className="hidden min-[1100px]:flex fixed left-0 top-0 bottom-0 w-16 xl:w-28 z-50 pointer-events-none border-r border-text-primary/5 items-center justify-center overflow-visible"
-                style={{ opacity: Math.max(0, 1 - scrollProgress * 6) }}
-            >
+            <div className="hidden min-[1100px]:flex fixed left-0 top-0 bottom-0 w-16 xl:w-28 z-50 pointer-events-none border-r border-text-primary/5 items-center justify-center overflow-visible">
 
                 {/* 1) Heavy Traveling squiggly line */}
                 <svg className="absolute w-full h-[150%] text-text-primary/20" preserveAspectRatio="none" style={{ top: '-10%' }}>
@@ -134,10 +131,7 @@ export const BlueprintWrapper = ({ children }: BlueprintWrapperProps) => {
             </div>
 
             {/* Right Margin - Continuous Densely Populated Doodle Art */}
-            <div 
-                className="hidden min-[1100px]:flex fixed right-0 top-0 bottom-0 w-16 xl:w-28 z-50 pointer-events-none border-l border-text-primary/5 items-center justify-center overflow-visible"
-                style={{ opacity: Math.max(0, 1 - scrollProgress * 6) }}
-            >
+            <div className="hidden min-[1100px]:flex fixed right-0 top-0 bottom-0 w-16 xl:w-28 z-50 pointer-events-none border-l border-text-primary/5 items-center justify-center overflow-visible">
 
                 {/* 1) Traveling zig-zag & overlapping line */}
                 <svg className="absolute w-full h-[150%] text-text-primary/20" preserveAspectRatio="none" style={{ top: '-10%' }}>
