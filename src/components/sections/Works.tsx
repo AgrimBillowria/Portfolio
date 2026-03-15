@@ -29,8 +29,8 @@ export const Works = () => {
         },
         {
             isImageBlock: true,
-            imageSrc: "/projects/autonomous_saas_viz.png",
-            imageLabel: "Autonomous SaaS Architecture"
+            imageSrc: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&fit=crop",
+            imageLabel: "AI Automation Workflow"
         },
         {
             name: "AI Workflow",
@@ -42,8 +42,8 @@ export const Works = () => {
         },
         {
             isImageBlock: true,
-            imageSrc: "/projects/ai_workflow_viz.png",
-            imageLabel: "N8N Data Pipeline Visualization"
+            imageSrc: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&fit=crop",
+            imageLabel: "AI Agent Network"
         }
     ];
 
