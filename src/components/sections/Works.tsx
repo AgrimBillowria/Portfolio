@@ -7,13 +7,16 @@ export const Works = () => {
     const projects = [
         {
             name: "Resume Classifier",
-            type: "Agentic AI Application",
-            year: "2025",
-            description: "An intelligent pipeline that autonomously categorizes and extracts key data from mixed resume formats using LLMs.",
-            link: "https://www.linkedin.com/posts/agrimbillowria01_resumeanalyzer-aiagent-streamlit-activity-7278783471012921344-9y3P?utm_source=share&utm_medium=member_desktop",
-            isFeatured: true,
+            year: "2024",
+            type: "ML & AGENTIC AI",
+            description: "An end-to-end ML ecosystem that processes, classifies, and ranks thousands of resumes with surgical precision using custom LLM agents.",
+            link: "https://resume-classifier.netlify.app/",
+            isImageBlock: false,
+            isFeatured: true
+        },
+        {
             isImageBlock: true,
-            imageSrc: "/projects/resume_classifier.webp",
+            imageSrc: "/projects/resume_classifier.png",
             imageLabel: "Resume Classifier AI Interface"
         },
         {
@@ -26,8 +29,8 @@ export const Works = () => {
         },
         {
             isImageBlock: true,
-            imageSrc: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&fit=crop",
-            imageLabel: "AI Automation Workflow"
+            imageSrc: "/projects/autonomous_saas_viz.png",
+            imageLabel: "Autonomous SaaS Architecture"
         },
         {
             name: "AI Workflow",
@@ -39,8 +42,8 @@ export const Works = () => {
         },
         {
             isImageBlock: true,
-            imageSrc: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&fit=crop",
-            imageLabel: "AI Agent Network"
+            imageSrc: "/projects/ai_workflow_viz.png",
+            imageLabel: "N8N Data Pipeline Visualization"
         }
     ];
 
