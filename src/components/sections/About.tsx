@@ -163,13 +163,13 @@ export const About = () => {
                         <div className="absolute -bottom-5 -left-8 w-32 h-10 bg-[#e5e5e5]/10 backdrop-blur-sm -rotate-[15deg] z-20 border-y border-bg-primary/5 shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
                             <div className="w-full h-[1px] bg-bg-primary/5 mt-1"></div>
                         </div>
-                        <div className="absolute inset-x-2 inset-y-2 max-w-[400px] w-[90%] mx-auto z-20">
-                            <img
-                                src="/Professional Picture/IMG_8085.webp"
-                                alt="Agrim Billowria Portrait"
-                                className="w-full h-full object-cover about-portrait"
-                            />
-                        </div>
+
+                        {/* Image */}
+                        <img
+                            src="/Professional%20Picture/IMG_8085.jpeg"
+                            alt="Agrim Billowria — Agentic AI Engineer"
+                            className="about-portrait w-full h-full object-cover object-[50%_55%] transition-all duration-700 group-hover:scale-105"
+                        />
 
                         {/* Red accent overlay on hover */}
                         <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/15 mix-blend-multiply transition-all duration-500 z-10"></div>
@@ -222,7 +222,7 @@ export const About = () => {
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 border-t border-bg-primary/10 pt-6">
                             <a 
                                 href="/CV/Agrim_Billowria_Resume_v6.docx.pdf" 
-                                download="Agrim_Billowria_CV.pdf"
+                                download="Agrim_Billowria_AI_Engineer.pdf"
                                 className="border border-accent-primary bg-accent-primary/10 text-accent-primary px-6 py-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] hover:bg-accent-primary hover:text-bg-primary transition-all duration-300"
                             >
                                 Download CV ↓
@@ -235,7 +235,7 @@ export const About = () => {
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"></span>
                             </span>
                             <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase text-bg-primary/40">
-                                Open to collaborations — 2026
+                                Based in India (+91) · Remote Worldwide
                             </span>
                         </div>
                     </div>

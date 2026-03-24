@@ -60,7 +60,7 @@ export const Contact = () => {
                                 // Direct Phone
                             </h3>
                             <a href="tel:+919596694166" className="text-xl md:text-3xl lg:text-4xl font-bold tracking-tight hover:text-accent-primary transition-colors block font-display">
-                                +91 9596694166
+                                +91 95966 94166
                             </a>
                         </div>
 

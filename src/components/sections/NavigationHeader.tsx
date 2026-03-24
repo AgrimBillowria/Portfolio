@@ -5,10 +5,11 @@ export const NavigationHeader = () => {
     const [activeSection, setActiveSection] = useState("");
 
     const navLinks = [
-        { href: "#works", label: "Works", id: "works" },
+        { href: "#projects", label: "Projects", id: "projects" },
         { href: "#about", label: "About", id: "about" },
         { href: "#education", label: "Education", id: "education" },
         { href: "#certificates", label: "Certificates", id: "certificates" },
+        { href: "#achievements", label: "Achievements", id: "achievements" },
         { href: "#contact", label: "Contact", id: "contact" },
     ];
 

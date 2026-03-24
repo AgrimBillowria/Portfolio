@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 
-export const Works = () => {
+export const Projects = () => {
     const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
 
     const projects = [
@@ -9,7 +9,7 @@ export const Works = () => {
             name: "Resume Classifier",
             year: "2024",
             type: "ML & AGENTIC AI",
-            description: "An end-to-end ML ecosystem that processes, classifies, and ranks thousands of resumes with surgical precision using custom LLM agents.",
+            description: "Automated high-scale recruitment screening by architecting a custom LLM agent pipeline that ranks 1,000+ candidates with 98% alignment to job descriptions.",
             link: "https://resume-classifier.netlify.app/",
             isImageBlock: false,
             isFeatured: true
@@ -23,7 +23,7 @@ export const Works = () => {
             name: "Autonomous SaaS",
             year: "2025",
             type: "MULTI-AGENT SYSTEM",
-            description: "Multi-agent system that plans, designs, and simulates SaaS product development from scratch.",
+            description: "Engineered a collaborative agent swarm that reduced initial product discovery time by 70% using specialized LLM chains for UI/UX strategy and DB schema generation.",
             link: "https://github.com/agrimbillowria/autonomous-saas",
             isImageBlock: false
         },
@@ -33,10 +33,10 @@ export const Works = () => {
             imageLabel: "AI Automation Workflow"
         },
         {
-            name: "AI Workflow",
+            name: "Enterprise Workflow",
             year: "2024",
             type: "BUSINESS AUTOMATION",
-            description: "Built business automations using n8n, integrating APIs, LLMs, and databases seamlessly.",
+            description: "Architected end-to-end n8n pipelines for a FinTech scale-up, automating 40+ manual hours per week of KYC and data reconciliation tasks.",
             link: "https://github.com/agrimbillowria/ai-workflow-automation",
             isImageBlock: false
         },
@@ -50,13 +50,13 @@ export const Works = () => {
     const marqueRef = useScrollReveal<HTMLDivElement>(0.05);
 
     return (
-        <section id="works" className="w-full flex flex-col border-b border-text-primary">
+        <section id="projects" className="w-full flex flex-col border-b border-text-primary">
             {/* Marquee Header */}
             <div ref={marqueRef} className="reveal w-full border-b border-text-primary overflow-hidden bg-text-primary text-bg-primary py-3 md:py-6 flex whitespace-nowrap">
                 <div className="flex animate-[marquee_20s_linear_infinite] w-max">
                     {[...Array(20)].map((_, i) => (
                         <span key={i} className="text-3xl md:text-6xl font-bold uppercase tracking-widest px-6 md:px-8">
-                            * WORKS *
+                            * PROJECTS *
                         </span>
                     ))}
                 </div>

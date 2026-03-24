@@ -182,10 +182,13 @@ export const NeuralNetworkBackground: React.FC = () => {
         const handleMouseLeave = () => { mouse = new Vec2(-1000, -1000); };
 
         window.addEventListener('resize', init);
-        canvas.addEventListener('mousemove', handleMouseMove);
-        canvas.addEventListener('touchmove', handleTouchMove, { passive: true });
-        canvas.addEventListener('mouseleave', handleMouseLeave);
-        canvas.addEventListener('touchend', handleMouseLeave);
+        
+        // Listen to document so even if dragging over other elements, it registers
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('touchmove', handleTouchMove, { passive: true });
+        document.addEventListener('mouseleave', handleMouseLeave);
+        document.addEventListener('touchend', handleMouseLeave);
+        
         init();
 
         const draw = () => {
@@ -237,10 +240,8 @@ export const NeuralNetworkBackground: React.FC = () => {
 
         return () => {
             window.removeEventListener('resize', init);
-            canvas.removeEventListener('mousemove', handleMouseMove);
-            canvas.removeEventListener('touchmove', handleTouchMove);
-            canvas.removeEventListener('mouseleave', handleMouseLeave);
-            canvas.removeEventListener('touchend', handleMouseLeave);
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseleave', handleMouseLeave);
             document.removeEventListener('visibilitychange', handleVisibilityChange);
             cancelAnimationFrame(animationFrameId);
         };
@@ -249,7 +250,7 @@ export const NeuralNetworkBackground: React.FC = () => {
     return (
         <canvas
             ref={canvasRef}
-            className="absolute inset-0 block pointer-events-auto"
+            className="absolute inset-0 block pointer-events-none"
             style={{ zIndex: 0 }}
         />
     );

@@ -4,15 +4,15 @@ export const Services = () => {
     const services = [
         {
             title: "Agentic AI",
-            tags: ["[ LLMs ]", "[ ORCHESTRATION ]", "[ RAG ]", "[ MULTI-AGENT SYSTEMS ]"]
+            tags: ["[ LLMs / CLAUDE ]", "[ LANGGRAPH ]", "[ RAG ARCHITECTURE ]", "[ PINECONE / WEAVIATE ]"]
         },
         {
             title: "Automation",
-            tags: ["[ n8n ]", "[ Make.com ]", "[ BUSINESS WORKFLOWS ]", "[ AI PIPELINES ]"]
+            tags: ["[ n8n ]", "[ MAKE / ZAPIER ]", "[ BROWSW EXTENSIONS ]", "[ LLM-CHAINED PIPELINES ]"]
         },
         {
             title: "Engineering",
-            tags: ["[ PYTHON ]", "[ LANGCHAIN ]", "[ DOCKER ]", "[ VECTOR DBs ]"]
+            tags: ["[ PYTHON / TS ]", "[ DOCKER / vLLM ]", "[ OLLAMA ]", "[ DISTRIBUTED SYSTEMS ]"]
         }
     ];
 

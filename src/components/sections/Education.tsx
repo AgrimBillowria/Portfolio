@@ -5,7 +5,7 @@ export const Education = () => {
 
     const educationData = [
         {
-            degree: "B.Tech CSE (AI & Machine Learning)",
+            degree: "Bachelor of Technology CSE (AI & Machine Learning)",
             institution: "Lovely Professional University, Punjab",
             date: "Aug 2023 – May 2027",
             score: "CGPA: 6.9",
@@ -79,7 +79,7 @@ export const Education = () => {
 
                                 {/* Degree/Institution Details */}
                                 <div className="md:col-span-8 pl-0 md:pl-8 lg:pl-16 relative">
-                                    <h4 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-[#1A1A1A] group-hover:text-accent-primary transition-colors duration-300">
+                                    <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-5xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-[#1A1A1A] group-hover:text-accent-primary transition-colors duration-300">
                                         {item.degree}
                                     </h4>
                                     <p className="text-[#1A1A1A]/70 font-medium text-lg max-w-xl mb-6">
