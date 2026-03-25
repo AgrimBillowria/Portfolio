@@ -166,7 +166,7 @@ export const About = () => {
 
                         {/* Image */}
                         <img
-                            src="/Professional%20Picture/IMG_8085.jpeg"
+                            src="/Professional%20Picture/profile_new.jpg"
                             alt="Agrim Billowria — Agentic AI Engineer"
                             className="about-portrait w-full h-full object-cover object-[50%_55%] transition-all duration-700 group-hover:scale-105"
                         />

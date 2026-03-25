@@ -77,7 +77,7 @@ export const Hero = () => {
                         >
                             <div className="rounded-full overflow-hidden w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 bg-[#1A1A1A]">
                                 <img
-                                    src="/Professional Picture/IMG_8085.webp"
+                                    src="/Professional Picture/profile_new.jpg"
                                     alt="Agrim Billowria — Professional Photo"
                                     className="w-full h-full object-cover object-center"
                                     loading="eager"
