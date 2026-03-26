@@ -221,7 +221,7 @@ export const About = () => {
                         {/* Actions & Availability */}
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 border-t border-bg-primary/10 pt-6">
                             <a 
-                                href="/CV/Agrim_Billowria_Resume_v6.docx.pdf" 
+                                href="/CV/agrim_fomated%20cV.pdf" 
                                 download="Agrim_Billowria_AI_Engineer.pdf"
                                 className="border border-accent-primary bg-accent-primary/10 text-accent-primary px-6 py-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] hover:bg-accent-primary hover:text-bg-primary transition-all duration-300"
                             >
