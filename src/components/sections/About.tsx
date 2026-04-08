@@ -168,10 +168,11 @@ export const About = () => {
                         <img
                             src="/Professional%20Picture/profile_new.jpg"
                             alt="Agrim Billowria — Agentic AI Engineer"
-                            className="about-portrait w-full h-full object-cover object-[50%_55%] transition-all duration-700 group-hover:scale-105"
+                            className="about-portrait absolute w-[135%] h-[135%] object-cover object-[15%_15%] transition-all duration-700 -left-[20%] -top-[12%] group-hover:scale-105"
                         />
 
                         {/* Red accent overlay on hover */}
+
                         <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/15 mix-blend-multiply transition-all duration-500 z-10"></div>
 
                         {/* Grain texture overlay */}
@@ -200,7 +201,7 @@ export const About = () => {
                             </span>
 
                             <p className="text-base md:text-lg lg:text-xl leading-[1.6] md:leading-[1.7] font-medium text-bg-primary/80 max-w-xl text-left text-pretty">
-                                I'm <span className="text-bg-primary font-bold">Agrim Billowria</span> — an Agentic AI Engineer obsessed with building autonomous systems that don't just follow instructions but{" "}
+                                I'm <span className="text-bg-primary font-bold">Agrim Billowria</span> — an Agentic AI Engineer passionate about building autonomous systems that don't just follow instructions but{" "}
                                 <span className="text-accent-primary italic font-bold">think for themselves.</span>{" "}
                                 From multi-agent orchestration to end-to-end business automation, I design intelligent pipelines that scale, adapt, and execute with zero hand-holding.
                             </p>
