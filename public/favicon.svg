@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 66">
+  <style>
+    .brand-text {
+      font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 900;
+      font-size: 72px;
+      fill: #1A1A1A;
+    }
+    .brand-dot {
+      fill: #FB2C37;
+    }
+    @media (prefers-color-scheme: dark) {
+      .brand-text {
+        fill: #FFFFFF;
+      }
+    }
+  </style>
+  <text x="0" y="58" class="brand-text" letter-spacing="-4">AB</text>
+  <circle cx="94" cy="52" r="8.5" class="brand-dot" />
+</svg>
