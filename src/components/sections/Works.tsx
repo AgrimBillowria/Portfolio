@@ -6,13 +6,26 @@ export const Projects = () => {
 
     const projects = [
         {
+            name: "Donut App (INRDeals)",
+            year: "2026",
+            type: "ASTRO.JS & VIRTUAL MALL",
+            description: "Architected and built the official web platform for Donut App (donutapp.in) using Astro.js under INRDeals Pvt Ltd, aggregating 500+ stores into an ultra-fast zero-switching shopping experience.",
+            link: "https://donutapp.in",
+            isImageBlock: false,
+            isFeatured: true
+        },
+        {
+            isImageBlock: true,
+            imageSrc: "/projects/donutapp_preview.png",
+            imageLabel: "Donut App Official Web Platform (donutapp.in)"
+        },
+        {
             name: "Resume Classifier",
             year: "2024",
             type: "ML & AGENTIC AI",
             description: "Automated high-scale recruitment screening by architecting a custom LLM agent pipeline that ranks 1,000+ candidates with 98% alignment to job descriptions.",
             link: "https://resume-classifier.netlify.app/",
-            isImageBlock: false,
-            isFeatured: true
+            isImageBlock: false
         },
         {
             isImageBlock: true,
@@ -109,9 +122,9 @@ export const Projects = () => {
                                     src={project.imageSrc}
                                     alt={project.imageLabel}
                                     onLoad={() => setLoadedImages((prev: Record<number, boolean>) => ({ ...prev, [index]: true }))}
-                                    className={`w-full h-full transition-all duration-700 group-hover:scale-105 ${
-                                        project.imageSrc?.startsWith('/') ? 'object-contain p-4' : 'object-cover'
-                                    } ${loadedImages[index] ? 'opacity-100' : 'opacity-0'}`}
+                                    className={`w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105 ${
+                                        loadedImages[index] ? 'opacity-100' : 'opacity-0'
+                                    }`}
                                 />
                                 <div className="absolute inset-0 bg-black/10 md:bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
                                 <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-4 md:p-6 translate-y-0 md:translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-gradient-to-t from-black/60 to-transparent md:from-transparent">

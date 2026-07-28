@@ -28,3 +28,6 @@ dist-ssr
 portfolio_fixed/
 runner
 npm-cache-local/
+temp_build/
+tmp-app/
+
